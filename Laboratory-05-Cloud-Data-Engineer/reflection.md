@@ -1,0 +1,17 @@
+Why is object storage better suited for storing millions of photos compared to a traditional block storage hard drive?
+Traditional block storage functions like a physical virtual disk attached directly to a single compute instance. As an application grows to store millions of unstructured files like photos, block storage faces severe limitations: file systems become bloated, directory lookups degrade performance, and resizing drives requires manual volume management and overhead. Object storage addresses this by storing data in a flat namespace where each file is assigned a unique identifier alongside custom metadata. This flat architecture enables dynamic scaling across petabytes of storage without performance bottlenecks or filesystem limits, allowing web applications to retrieve images via lightweight web endpoints directly.
+
+How did using Docker make it easier to deploy the MinIO storage server?
+Docker abstracted all environmental dependencies and software setups into a single command execution. Instead of configuring underlying storage dependencies, installing MinIO binaries manually, setting up system services, and defining configuration files from scratch, Docker allowed us to pull a standardized container image and instantiate the service instantly. Passing runtime configurations—such as root credentials and port mappings—directly through flags (`-e` and `-p`) reduced deployment complexity and ensured consistent environment configuration within seconds.
+
+What is a "bucket" in the context of cloud storage?
+In object storage, a bucket is a logical top-level container used to group and organize discrete objects (files). Similar to a directory or folder in standard file systems, a bucket acts as a namespace and boundary where access policies, security permissions, lifecycle rules, and storage configurations are applied. Every uploaded object resides within a designated bucket and is accessed using a combination of the bucket name and the object's unique key.
+
+How do you think large enterprise companies ensure their object storage data is not lost if the physical server crashes?
+Enterprise cloud providers enforce multi-layered redundancy models to prevent data loss:
+1. Erasure Coding: Object data is mathematically chunked, encoded with parity bits, and distributed across multiple independent drive arrays, allowing full recovery even if several hard drives fail simultaneously.
+2. Cross-Region & Multi-AZ Replication: Buckets automatically sync and replicate data across distinct physical Availability Zones (data centers) or regions, ensuring fault tolerance against catastrophic hardware or site-wide power failures.
+3. Versioning & Immutability: Objects retain historical versions and lock states to defend against accidental overwrites, malicious deletions, or ransomware attacks.
+
+How is your confidence in navigating the Linux command line growing?
+Working through hands-on deployment workflows has made terminal navigation much more intuitive. Combining multi-port container execution, environment variable declarations, runtime status checks, and networking configurations in Linux has demystified server administration. Moving beyond simple syntax memorization to running real containerized infrastructure reinforces how CLI tools streamline cloud operations.
