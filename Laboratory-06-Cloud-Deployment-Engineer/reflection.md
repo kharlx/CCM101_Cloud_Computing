@@ -1,0 +1,11 @@
+# Mission Reflection: The Cloud Deployment Engineer
+
+Writing a `docker-compose.yml` file fundamentally changes how a cloud engineer approaches infrastructure deployment compared to manually typing out long terminal commands[cite: 1, 2]. Instead of executing separate `docker run` commands with complex networking and environment flags for each container, Infrastructure as Code (IaC) allows us to define multi-tier application stacks declaratively in a single file[cite: 1, 2]. This ensures repeatability, eliminates manual configuration errors, and makes version-controlling infrastructure effortless[cite: 1, 2].
+
+Working with YAML files requires strict attention to formatting. If an engineer makes an indentation error—such as using a Tab character instead of standard spaces—the YAML parser will fail to interpret the document correctly, resulting in syntax failures and deployment blocks[cite: 1, 2]. 
+
+Using environment variables like `MYSQL_PASSWORD` and `MYSQL_DATABASE` within the Compose file is a critical security and configuration practice[cite: 1, 2]. It decouples sensitive credentials and configuration data from the container images, allowing containers to securely initialize and authenticate with each other upon startup without hardcoding secrets directly into the source code[cite: 1, 2].
+
+Deploying a fully functional enterprise-grade cloud storage system like Nextcloud linked with a MariaDB database in just a matter of minutes felt remarkably powerful[cite: 1, 2]. Being able to access the setup page via port `8080` highlighted the immense efficiency of modern container orchestration and automation[cite: 1, 2]. 
+
+Reflecting on my journey since Mission 1, my understanding of cloud computing has evolved dramatically[cite: 1, 2]. I have transitioned from understanding basic cloud concepts and single-container deployments to architecting multi-tier cloud applications, managing container networks, and practicing professional Infrastructure as Code principles as a true cloud engineer[cite: 1, 2].
